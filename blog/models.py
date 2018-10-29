@@ -7,4 +7,11 @@ class Blog(models.Model):
     summary=models.TextField()
     pub_date=models.DateTimeField()
 
+    def body(self):
+        return self.summary[:50]
+
+    def __str__(self):
+        return self.title
+
+
     

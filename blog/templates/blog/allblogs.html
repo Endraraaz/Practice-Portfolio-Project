@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="portfolio-project">
@@ -73,7 +74,7 @@
           {% for p in blog.all%}
           <h2>{{ p.title }}<br></h2>
                     <img class="img_fluid" src="{{ p.image.url }}" height="200" width="200"/>
-                        <p class="card-text">{{ p.summary}}
+                        <p class="card-text">{{ p.body}}<a href="{% url 'detail' p.id %}"><b>...</b></a>
                             <br /><br />Date Added:{{ p.pub_date }}
                         </p>
         {% endfor %}
